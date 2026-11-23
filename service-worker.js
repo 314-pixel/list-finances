@@ -1,5 +1,5 @@
 // List 2.0: offline-first app shell. No personal finance entries are cached here.
-const CACHE='list-finances-shell-v4-20261123';
+const CACHE='list-finances-shell-v5-20261123';
 const PREFIX='list-finances-shell-';
 const ROOT=self.registration.scope;
 const HOME=new URL('index.html',ROOT).href;
@@ -9,6 +9,7 @@ async function prepareShell(){
  const response=await fetch(new Request(HOME,{cache:'reload'}));
  if(!response.ok||!(response.headers.get('content-type')||'').includes('text/html'))throw Error('HTML cache failed');
  await cache.put(HOME,response.clone()); await cache.put(ROOT,response.clone());
+ await cache.add(new URL('sms-import.js',ROOT).href); // mandatory offline importer
  await Promise.allSettled(OPTIONAL.map(path=>cache.add(new URL(path,ROOT).href)));
 }
 self.addEventListener('install',event=>event.waitUntil(prepareShell().then(()=>self.skipWaiting())));
