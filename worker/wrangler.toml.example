@@ -1,0 +1,6 @@
+name = "list-finances-advice"
+main = "ai-proxy.js"
+compatibility_date = "2026-11-23"
+[vars]
+OPENAI_MODEL = "gpt-4.1-mini"
+# Keep OPENAI_API_KEY and ACCESS_TOKEN as Cloudflare Secrets, never in the repository.
