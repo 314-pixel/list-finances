@@ -42,6 +42,13 @@ body{background:radial-gradient(ellipse 55% 27% at 95% 1%,rgba(135,156,250,.27),
 :root[data-theme="dark"]{--bg:#0d1425;--fg:#ecf0ff;--muted:#a3acc7;--line:rgba(198,204,255,.18);--surface:rgba(34,42,68,.82);--surface-strong:rgba(39,50,79,.94);--field:rgba(55,65,94,.82);--accent:#c4baff;--contrast:#dee5ff;--shadow:0 15px 44px rgba(0,0,0,.28)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1425;--fg:#ecf0ff;--muted:#a3acc7;--line:rgba(198,204,255,.18);--surface:rgba(34,42,68,.82);--surface-strong:rgba(39,50,79,.94);--field:rgba(55,65,94,.82);--accent:#c4baff;--contrast:#dee5ff;--shadow:0 15px 44px rgba(0,0,0,.28)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Dark glass surfaces retain contrast instead of bright white borders */
+:root[data-theme="dark"] .card{border-color:rgba(227,233,255,.12)}
+:root[data-theme="dark"] .dock{background:rgba(33,41,64,.9);border-color:rgba(227,233,255,.18);box-shadow:0 16px 44px rgba(0,0,0,.42)}
+:root[data-theme="dark"] .tab.active{background:rgba(106,116,168,.26);color:#e4e4ff}
+:root[data-theme="dark"] .button.soft{background:rgba(80,91,129,.48)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .card{border-color:rgba(227,233,255,.12)}:root:not([data-theme="light"]) .dock{background:rgba(33,41,64,.9);border-color:rgba(227,233,255,.18);box-shadow:0 16px 44px rgba(0,0,0,.42)}:root:not([data-theme="light"]) .tab.active{background:rgba(106,116,168,.26);color:#e4e4ff}:root:not([data-theme="light"]) .button.soft{background:rgba(80,91,129,.48)}}
 </style>
 </head>
 <body>
